@@ -1,0 +1,30 @@
+version: '2.0'
+
+services:
+    
+   timeapp:
+     image: holy
+     environment:
+      - GITURL=https://github.com/AbrahemGh1/example2.git
+      - APPNAME=timeApp.jar
+    
+     volumes:
+        # Pass volume named mysql-data to mysql container
+      - C:\Users\Abrahim\Desktop\logfile.txt:/application/logfile.txt 
+     ports:
+      - 8080:8080
+  
+   weatherapp:
+     image: try
+     environment:
+      - GITURL=https://github.com/AbrahemGh1/example2.git
+      - APPNAME=weatherApp.jar
+     ports:
+      - 8081:8080   
+      
+#docker-compose up
+#docker-compose down
+#docker-compose timeapp
+#docker-compose weatherapp
+#docker-compose -p 8082:8080
+      
