@@ -2,8 +2,10 @@ version: '2.0'
 
 services:
     
+
+    #time application service
    timeapp:
-     image: holy
+     image: abrahem17/myapp1
      environment:
       - GITURL=https://github.com/AbrahemGh1/example2.git
       - APPNAME=timeApp.jar
@@ -14,17 +16,16 @@ services:
      ports:
       - 8080:8080
   
+
+
+  #weather application service
    weatherapp:
-     image: try
+     image: abrahem17/myapp1
      environment:
       - GITURL=https://github.com/AbrahemGh1/example2.git
       - APPNAME=weatherApp.jar
      ports:
       - 8081:8080   
       
-#docker-compose up
-#docker-compose down
-#docker-compose timeapp
-#docker-compose weatherapp
-#docker-compose -p 8082:8080
+
       

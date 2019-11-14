@@ -1,5 +1,5 @@
 FROM ubuntu
-MAINTAINER Abrahem abrahem_gh@yahoo.com
+LABEL MAINTAINER Abrahem abrahem_gh@yahoo.com
 
 #environment variables
 ENV GITURL=https://github.com/AbrahemGh1/example2.git
@@ -16,18 +16,8 @@ RUN apt-get -y install git
 #pull jar file from git to application dir 
 RUN mkdir application
 WORKDIR "/application"
-#RUN touch logfile.txt
 RUN git init
 RUN git pull $GITURL
 
 #run the jar file
 CMD exec java -jar "$APPNAME"
-
-EXPOSE 8081
-
-#EXPOSE 8080 
-#docker build -t abrahem17/timeapp -f  timeappimage .
-#docker push abrahem17/timeapp
-
-#docker-compose run -v C:\Users\Abrahim\Desktop\logfile.txt:/application/logfile.txt -p 8080:8080 timeapp
-#docker run -it -v C:\Users\Abrahim\Desktop\logfile.txt:/application/logfile.txt -p 8080:8080 9fd807920ac3z
